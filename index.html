@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+<title>index</title>
+<link rel=stylesheet type="text/css" href="vendor/solarized/solarized-dark.min.css">
+</head>
+
+<body>
+
+<!-- This document was automatically generated with bibtex2html 1.98
+     (see http://www.lri.fr/~filliatr/bibtex2html/),
+     with the following command:
+     bibtex2html -css vendor/solarized/solarized-dark.min.css index.bib  -->
+
+
+<table>
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="takahashi2021ipsj-pro-paper">1</a>]
+</td>
+<td class="bibtexitem">
+Shusuke Takahashi, Yusuke Izawa, Hidehiko Masuhara, and Youyou Cong.
+ An approach to collect object graphs for data-structure live
+  programming based on a language implementation framework.
+ <em>Journal of Information Processing</em>, 1 2022.
+ Presented at the IPSJ PRO 2021-3-(5) in November 2021. 17 pages. In
+  press.
+[&nbsp;<a href="index_bib.html#takahashi2021ipsj-pro-paper">bib</a>&nbsp;]
+<blockquote>
+Data-structure live programming environments execute a program, collect object graphs (objects and their mutual references) created and modified during the execution, and visualize the graphs as a node-link diagram. Existing implementations collect object graphs by instrumenting checkpoints, which traverse reachable objects, into every necessary points in the program. Since the cost of each checkpoint is proportional to the number of existing objects, its overhead can be huge. This paper proposes (1) a method to collect object graphs by recording object creation and modification events into an efficient data structure, and (2) to implement the object graph collection mechanism by extending a language implemented on top of a language implementation framework.  As a result, the overhead of object graph collection is merely proportional to the number of object creation/modification operations in total. We implemented the proposed mechanism for the Kanon data-structure live programming environment by extending GraalJS, which is a JavaScript implementation on the Graal/Truffle language implementation framework. We compared our new implementation against the original Kanon, which is based on checkpointing, and confirmed that our implementation improves program execution (and data collection) speed, and has sufficiently small overheads to reconstruct object graphs.
+</blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2021jot">2</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa, Hidehiko Masuhara, Carl&nbsp;Friedrich Bolz-Tereick, and Youyou Cong.
+ Threaded code generation with a meta-tracing jit compiler.
+ <em>The Journal of Object Technology Special Issue for ICOOOLPS
+  2021</em>, 12 2021.
+ Presented at the ICOOOLPS 2021 workshop in July 2021. 11 pages. In
+  press.
+[&nbsp;<a href="index_bib.html#izawa2021jot">bib</a>&nbsp;| 
+<a href="http://arxiv.org/abs/2106.12496">arXiv</a>&nbsp;]
+<blockquote>
+Language implementation frameworks, e.g., RPython and Truffle/Graal, are practical tools for creating efficient virtual machines, including a well-functioning just-in-time (JIT) compiler. It is demanding to support multitier JIT compilation in such a framework for language developers. This paper presents an idea to generate threaded code by reusing an existing meta-tracing JIT compiler, as well as an interpreter design for it. Our approach does not largely modify RPython itself but constructs an effective interpreter definition to enable threaded code generation in RPython. We expect our system to be extended to support multilevel JIT compilation in the RPython framework. We measured the potential performance of our threaded code generation by simulating its behavior in PyPy. We confirmed that our approach reduced code sizes by 80 % and compilation times by 60 % compared to PyPy's JIT compiler on average, and ran about 7 % faster than the interpreter-only execution.
+</blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2022pepm">3</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa, Hidehiko Masuhara, and Carl&nbsp;Friedrich Bolz-Tereick.
+ Two-level just-in-time compilation with one interpreter and one
+  engine.
+ In <em>The ACM SIGPLAN Workshop on Partial Evaluation and Program
+  Manipulation</em>, PEPM 2022, Virtual, 2022.
+ <b>Refereed</b>. Short paper. 7 pages.
+[&nbsp;<a href="index_bib.html#izawa2022pepm">bib</a>&nbsp;| 
+<a href="http://arxiv.org/abs/2201.09268">arXiv</a>&nbsp;| 
+<a href="https://popl22.sigplan.org/details/pepm-2022-papers/3/Two-level-Just-in-Time-Compilation-with-One-Interpreter-and-One-Engine">http</a>&nbsp;]
+<blockquote>
+Modern, powerful virtual machines such as those running Java or JavaScript support multi-tier JIT compilation and optimization features to achieve their high performance. However, implementing and maintaining several compilers/optimizers that interact with each other requires hard-working VM developers. In this paper, we propose a technique to realize two-level JIT compilation in RPython without implementing several interpreters or compilers from scratch. As a preliminary realization, we created adaptive RPython, which performs both baseline JIT compilation based on threaded code and tracing JIT compilation. We also implemented a small programming language with it. Furthermore, we preliminarily evaluated the performance of that small language, and our baseline JIT compilation ran 1.77x faster than the interpreter-only execution. Furthermore, we observed that when we apply an optimal JIT compilation for different target methods, the performance was mostly the same as the one optimizing JIT compilation strategy, saving about 40 % of the compilation code size.
+</blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="10.1145/3426422.3426977">4</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa and Hidehiko Masuhara.
+ Amalgamating different jit compilations in a meta-tracing jit
+  compiler framework.
+ In <em>Proceedings of the 16th ACM SIGPLAN International Symposium
+  on Dynamic Languages</em>, DLS 2020, page 1–15, New York, NY, USA, 2020.
+  Association for Computing Machinery.
+ <b>Refereed</b>. 15 pages.
+[&nbsp;<a href="index_bib.html#10.1145/3426422.3426977">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1145/3426422.3426977">DOI</a>&nbsp;]
+<blockquote>
+Most virtual machines employ just-in-time (JIT) compilers to achieve high-performance. Trace-based compilation and method-based compilation are two major compilation strategies in JIT compilers. In general, the former excels in compiling programs with more in-depth method calls and more dynamic branches, while the latter is suitable for a wide range of programs. Some previous studies have suggested that each strategy has its advantages and disadvantages, and there is no clear winner.  In this paper, we present a new approach, namely, the meta-hybrid JIT compilation strategy. It combines trace-based and method-based compilations to utilize the advantages of both strategies. Moreover, it is realized as a meta JIT compiler framework; thus, we can generate a VM with a hybrid JIT compiler that can apply different program parts by merely writing an interpreter with our framework.  We chose to extend a meta-tracing JIT compiler and supported the two compilations on it. As a prototype, we implemented a simple meta-tracing JIT compiler framework called BacCaml based on the MinCaml compiler by following RPython’s architecture.  We evaluated its performance by creating a small functional programming language with BacCaml and running microbenchmark programs. Furthermore, we performed a synthetic experiment to confirm that there are programs that run faster by hybrid compilation.
+</blockquote>
+<blockquote>
+Keywords: JIT compiler, RPython, meta-tracing JIT compiler, language implementation framework
+</blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="masuhara2020live">5</a>]
+</td>
+<td class="bibtexitem">
+Hidehiko Masuhara, Shusuke Takahashi, Yusuke Izawa, and Youyou Cong.
+ Toward a multi-language and multi-environment framework for live
+  programming.
+ In <em>Proceedings of the 6th Workshop on Live Programming</em>, Live
+  2020, pages 1--5, Virtual, 2020.
+ <b>Refereed</b>. 5 pages.
+[&nbsp;<a href="index_bib.html#masuhara2020live">bib</a>&nbsp;| 
+<a href="http://liveprog.org/live-2020/Toward-a-Multi-Language-and-Multi-Environment-Framework-for-Live-Programming/">http</a>&nbsp;]
+<blockquote>
+While applications of live programming are expanding to more practical and professional domains, most live programming environments (LPEs) are still developed for a single target language with an original code editor.  We propose an implementation framework for developing LPEs so that we can minimize efforts on implementing an LPE for a different target language and an existing code editor/IDE.  Our idea is to use a meta-JIT language implementation framework (e.g., Graal/Truffle and RPython) and LSP to separate core live programming implementations from language-specific and editor/IDE specific implementations.  This paper takes the Kanon live programming environment as a concrete example and discusses how we can design the framework to accommodate the features of Kanon.  Although the framework design is still underway, the paper presents a sketch of the framework APIs for separating language-specific functions and clarifies the requirements to LSP.
+</blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="10.1145/3328433.3328439">6</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa, Hidehiko Masuhara, and Tomoyuki Aotani.
+ Extending a meta-tracing compiler to mix method and tracing
+  compilation.
+ In <em>Proceedings of the Conference Companion of the 3rd
+  International Conference on Art, Science, and Engineering of Programming</em>,
+  Programming 2019, pages 1--3, New York, NY, USA, 2019. Association for
+  Computing Machinery.
+ <b>Refereed</b>. 3 pages.
+[&nbsp;<a href="index_bib.html#10.1145/3328433.3328439">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1145/3328433.3328439">DOI</a>&nbsp;]
+<blockquote>
+Meta-interpreter-based just-in-time compiler frameworks provide a convenient way for language designers to implement efficient virtual machines. Those frameworks either employ tracing-based or method- (or partial evaluation) based strategies, which have their own pros and cons. This paper proposes an approach to enable both tracing- and method-based compilation so that the runtime can selectively apply an appropriate strategy to different parts of a program. The proposal basically extends a meta-tracing compiler to method-based compilation by roll backing at conditional branches, trace-splitting at loop entries, and not following at function calls. As a proof-of-concept, we implemented a tiny meta-tracing compiler in MinCaml by following the RPython's architecture and extended it to support both tracing- and method-based compilation.
+</blockquote>
+<blockquote>
+Keywords: language implementation frameworks, tracing JIT compilation, RPython
+</blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="10.1145/3328433.3328466">7</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa.
+ Baccaml: The meta-hybrid just-in-time compiler.
+ In <em>Proceedings of the Conference Companion of the 3rd
+  International Conference on Art, Science, and Engineering of Programming</em>,
+  Programming 2019, pages 1--3, New York, NY, USA, 2019. Association for
+  Computing Machinery.
+ <b>Refereed</b>. <b>Awarded [*]</b>. 3 pages.
+[&nbsp;<a href="index_bib.html#10.1145/3328433.3328466">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1145/3328433.3328466">DOI</a>&nbsp;]
+<blockquote>
+Meta-interpreter-based just-in-time compiler frameworks are useful to conveniently build a language runtime with reasonable execution performance.
+</blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2019jssst">8</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa, Hidehiko Masuhara, Tomoyuki Aotani, and Youyou Cong.
+ A stack hybridization for meta-hybrid just-in-time compilation.
+ In Kei Ito, editor, <em>Proceedings of the 36th JSSST Annual
+  Conference</em>, pages No.&nbsp;2--L. Japan Society for Software Science and
+  Technology (JSSST), 2019.
+ Nonrefereed.
+[&nbsp;<a href="index_bib.html#izawa2019jssst">bib</a>&nbsp;| 
+<a href="http://jssst.or.jp/files/user/taikai/2019/proceedings.html">.html</a>&nbsp;]
+<blockquote>
+Meta-interpreter-based language implementation frameworks, such as RPython and Truffe/Graal, are convenient tool for implementing state-of-the-art virtual machines. Those frameworks are classified into trace-based and method- (or ast-) based strategies. RPython uses a trace-based policy to compile straight execution paths, while Truffe/Graal leverages method invocation to compile entire method bodies. Each approach has its own advantages and disadvantages. The trace-based strategy is good at compiling pro- grams with many branching possibilities and able to reduce the size of compiled code, but it is weak at programs with varying control-flow. The method-based strategy is robust with the latter type of programs but it needs thorough method-inlining management to achieve excellent performance. To take advantage of both strategies, we propose a meta-hybrid compilation technique to integrate trace- and method-based compilations, as well as a proof-of-concept implementation called BacCaml. To achieve this goal, we develop a stack hybridization mechanism which makes it possible to coordinate trace- and method-based meta JIT compilation. In the implementation, we extend RPython's architecture and introduced a special syntax for realizing this system in a single interpreter definition.
+</blockquote>
+<blockquote>
+Keywords: PyPy, BacCaml, MinCaml, RPython
+</blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="takahashi2021ipsj-pro-2">9</a>]
+</td>
+<td class="bibtexitem">
+高橋 修祐, 伊澤 侑祐, 増原 英彦, and 叢 悠悠.
+ 
+  データ構造ライブプログラミングのための言語実現フレームワークに基づくオブジェクトグラフ収集手法.
+ 情報処理学会第136回プログラミング研究会 PRO
+  2021-3-(5), November 2021.
+[&nbsp;<a href="index_bib.html#takahashi2021ipsj-pro-2">bib</a>&nbsp;| 
+<a href="https://sigpro.ipsj.or.jp/pro2021-3/program/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2021ipsj-pro20213">10</a>]
+</td>
+<td class="bibtexitem">
+伊澤 侑祐, 堀江 倫大, 緒方 一則, and 千葉 立寛.
+ 
+  Java静的コンパイラを用いたquarkusフレームワークの性能評価.
+ 情報処理学会第136回プログラミング研究会 PRO
+  2021-3-(6), November 2021.
+[&nbsp;<a href="index_bib.html#izawa2021ipsj-pro20213">bib</a>&nbsp;| 
+<a href="https://sigpro.ipsj.or.jp/pro2021-3/program/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2021icooolps">11</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa, Hidehiko Masuhara, Carl&nbsp;Friedrich Bolz-Tereick, and Youyou Cong.
+ Threaded code generation with a meta-tracing jit compiler.
+ The 16th Workshop on Implementation, Compilation, Optimization of
+  Object-Oriented Languages, Programs and Systems (ICOOOLPS 2021), 2021.
+ <b>Refereed</b>.
+[&nbsp;<a href="index_bib.html#izawa2021icooolps">bib</a>&nbsp;| 
+<a href="http://arxiv.org/abs/2106.12496v4">arXiv</a>&nbsp;| 
+<a href="https://conf.researchr.org/track/ecoop-issta-2021/ecoop-issta-2021-icooolps">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="takahashi2021ipsj-pro">12</a>]
+</td>
+<td class="bibtexitem">
+高橋 修祐, 伊澤 侑祐, 増原 英彦, and 叢 悠悠.
+ 
+  言語実現フレームワークに基づく汎言語的オブジェクトグラフ収集手法.
+ 情報処理学会第135回プログラミング研究会 PRO
+  2021-2-(7), July 2021.
+[&nbsp;<a href="index_bib.html#takahashi2021ipsj-pro">bib</a>&nbsp;| 
+<a href="https://sigpro.ipsj.or.jp/pro2021-2/program/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2021ppl-reproduction">13</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa and Hidehiko Masuhara.
+ Amalgamating different JIT compilations in a meta-tracing JIT
+  compiler framework.
+ The 23nd JSSST Workshop on Programming and Programming Languages,
+  2021.
+ Reproduction of the DLS'20 talk at JSSST PPL.
+[&nbsp;<a href="index_bib.html#izawa2021ppl-reproduction">bib</a>&nbsp;| 
+<a href="https://jssst-ppl.org/workshop/2021/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2021ppl">14</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa, Hidehiko Masuhara, and Youyou Cong.
+ An interpreter design for supporting different JIT compilations in
+  rpython framework.
+ The 23nd JSSST Workshop on Programming and Programming Languages,
+  2021.
+ Poster Presentation.
+[&nbsp;<a href="index_bib.html#izawa2021ppl">bib</a>&nbsp;| 
+<a href="https://easychair.org/smart-program/PPL2021/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="takahashi2021ppl">15</a>]
+</td>
+<td class="bibtexitem">
+Shusuke Takahashi, Yusuke Izawa, Hidehiko Masuhara, and Youyou Cong.
+ 
+  汎言語的ライブプログラミング環境のためのデータ構造解析手法.
+ The 23nd JSSST Workshop on Programming and Programming Languages,
+  2021.
+ Poster Presentation.
+[&nbsp;<a href="index_bib.html#takahashi2021ppl">bib</a>&nbsp;| 
+<a href="https://easychair.org/smart-program/PPL2021/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="takahashi2020jssstppl">16</a>]
+</td>
+<td class="bibtexitem">
+Shusuke Takahashi, Yusuke Izawa, Hidehiko Masuhara, and Youyou Cong.
+ 
+  ライブプログラミング環境は多言語化/多開発環境化の夢を見るか.
+ The 37th JSSST Anual Conference. Japan Society for Software Science
+  and Technology, 2020.
+ Poster Presentation.
+[&nbsp;<a href="index_bib.html#takahashi2020jssstppl">bib</a>&nbsp;| 
+<a href="https://jssst2020.wordpress.com/program/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2020ppl">17</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa and Hidehiko Masuhara.
+ Making different jit compilations dancing to the same tune, acting in
+  the meta-level.
+ The 22nd JSSST Workshop on Programming and Programming Languages,
+  2020.
+ Poster Presentation.
+[&nbsp;<a href="index_bib.html#izawa2020ppl">bib</a>&nbsp;| 
+<a href="https://easychair.org/smart-program/PPL2020/">http</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2019kumiki">18</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa, Hidehiko Masuhara, and Tomoyuki Aotani.
+ Meta-hybrid jit compilation approach for the path-divergence problem.
+ The Kumiki 6.0 Meeting, December 2019.
+[&nbsp;<a href="index_bib.html#izawa2019kumiki">bib</a>&nbsp;]
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="izawa2018ppl">19</a>]
+</td>
+<td class="bibtexitem">
+Yusuke Izawa, Hidehiko Masuhara, and Tomoyuki Aotani.
+ メタ混合 JIT コンパイラの提案.
+ The 20nd JSSST Workshop on Programming and Programming Languages,
+  2018.
+ Poster Presentation.
+[&nbsp;<a href="index_bib.html#izawa2018ppl">bib</a>&nbsp;| 
+<a href="https://jssst-ppl.org/workshop/2018/program.html">.html</a>&nbsp;]
+
+</td>
+</tr>
+</table><hr><p><em>This file was generated by
+<a href="http://www.lri.fr/~filliatr/bibtex2html/">bibtex2html</a> 1.98.</em></p>
+</body>
+</html>
