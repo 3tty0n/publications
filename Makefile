@@ -2,5 +2,8 @@ build:
 	cp ~/src/github.com/3tty0n/cv/my-bib.bib index.bib
 	bibtex2html -css vendor/solarized/solarized-dark.min.css index.bib
 
+portfolio.html: portfolio.tex
+	make4ht -l -c portfolio.cfg $<
+
 clean:
-	$(RM) index.html
+	$(RM) index.html portfolio.html

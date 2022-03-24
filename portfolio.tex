@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[backend=biber,bibstyle=authoryear,sorting=ydnt]{biblatex}
+\usepackage{graphicx}
+\bibliography{index}
+\usepackage{hyperref}
+
+\ExecuteBibliographyOptions{doi=false,url=false}
+\newbibmacro{string+hyperlink}[1]{%
+  \iffieldundef{url}{%
+    \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+    {\href{\thefield{url}}{#1}}}
+\DeclareFieldFormat*{title}{\usebibmacro{string+hyperlink}{#1}}
+
+\newbibmacro{usera}{%
+\iffieldundef{usera}{}{%
+\savefield*{usera}{\filename}%
+\usebibmacro{string+hyperlink}{\includegraphics[width=100pt]{\filename}}\\}%
+}
+\AtEveryBibitem{\usebibmacro{usera}}
+
+\defbibcheck{annoterefereed}{\iffieldequalstr{annotation}{refereed}{}{\skipentry}}
+\defbibcheck{annotenonrefereed}{\iffieldequalstr{annotation}{nonrefereed}{}{\skipentry}}
+
+\begin{document}
+\section{My Academic Portfolio}
+\nocite{*}
+
+\section*{Articles}
+
+\printbibliography[heading={subbibliography},title={Refereed},type=article,check=annoterefereed]
+
+\section*{Conference Publications}
+
+\printbibliography[heading={subbibliography},title={Refereed},type=inproceedings,check=annoterefereed]
+
+\printbibliography[heading={subbibliography},title={Nonrefereed},type=inproceedings,check=annotenonrefereed]
+
+\section*{Talks}
+
+\printbibliography[heading={subbibliography},title={Refereed},type=misc,check=annoterefereed]
+
+\printbibliography[heading={subbibliography},title={Nonrefereed},type=misc,check=annotenonrefereed]
+
+\end{document}
