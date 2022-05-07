@@ -1,5 +1,6 @@
+MYBIB := $(shell [ -f ~/src/github.com/3tty0n/cv/my-bib.bib ] && echo "~/src/github.com/3tty0n/cv/my-bib.bib" || echo "../my-bib.bib")
 build:
-	cp ~/src/github.com/3tty0n/cv/my-bib.bib index.bib
+	cp $(MYBIB) index.bib
 	bibtex2html -css vendor/solarized/solarized-dark.min.css index.bib
 
 portfolio.html: portfolio.tex
