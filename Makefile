@@ -3,7 +3,9 @@ build:
 	cp $(MYBIB) index.bib
 	bibtex2html -css vendor/solarized/solarized-dark.min.css index.bib
 
-portfolio.html: portfolio.tex
+portfolio.html: portfolio.tex index.bib
+	make4ht -l -c portfolio.cfg $<
+	biber portfolio
 	make4ht -l -c portfolio.cfg $<
 
 clean:
